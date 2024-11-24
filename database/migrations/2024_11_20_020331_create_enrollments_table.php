@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->date('registration_date');
             $table->unsignedBigInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('Students');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->unsignedBigInteger('class_id');
-            $table->foreign('class_id')->references('id')->on('Classes');
+            $table->foreign('class_id')->references('id')->on('school_class');
             $table->timestamps();
         });
     }

@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('allocations', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('disciplines_id');
-            $table->foreign('disciplines_id')->references('id')->on('Disciplines');
+            $table->foreign('disciplines_id')->references('id')->on('disciplines');
             $table->unsignedBigInteger('class_id');
-            $table->foreign('class_id')->references('id')->on('Classes');
+            $table->foreign('class_id')->references('id')->on('school_class');
             $table->unsignedBigInteger('teachers_id');
-            $table->foreign('teachers_id')->references('id')->on('Teachers');
+            $table->foreign('teachers_id')->references('id')->on('teachers');
             $table->timestamps();
         });
     }

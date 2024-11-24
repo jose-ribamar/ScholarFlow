@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -19,6 +20,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'cpf',
+        'date_of_birth',
         'email',
         'password',
     ];
@@ -45,4 +48,21 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function Direction (): HasMany
+    {
+        return $this->hasMany(Direction::class, 'created_by');
+    }
+
+    public function Student (): HasMany
+    {
+        return $this->hasMany(Student::class, 'created_by');
+    }
+    
+    public function Teacher (): HasMany 
+    {
+        return $this->hasMany(Teacher::class, 'created_by');
+    }
+    
+    
 }

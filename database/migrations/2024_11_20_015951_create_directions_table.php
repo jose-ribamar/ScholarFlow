@@ -13,12 +13,8 @@ return new class extends Migration
     {
         Schema::create('directions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('cpf');
-            $table->date('date_of_birth');
-            $table->string('email')->unique();
             $table->unsignedBigInteger('created_by');
-            $table->foreign('created_by')->references('id')->on('Users');
+            $table->foreign('created_by')->references('id')->on('users');
             $table->timestamps();
         });
     }
