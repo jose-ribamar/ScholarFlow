@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('report_cards', function (Blueprint $table) {
             $table->id();
+            $table->float('grade');
+            $table->boolean('approved');
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('Students');
+            $table->unsignedBigInteger('class_id');
+            $table->foreign('class_id')->references('id')->on('Classes');
+            $table->unsignedBigInteger('teachers_id');
+            $table->foreign('teachers_id')->references('id')->on('Teachers');
+            $table->unsignedBigInteger('disciplines_id');
+            $table->foreign('disciplines_id')->references('id')->on('Disciplines');
             $table->timestamps();
         });
     }

@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('allocations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('disciplines_id');
+            $table->foreign('disciplines_id')->references('id')->on('Disciplines');
+            $table->unsignedBigInteger('class_id');
+            $table->foreign('class_id')->references('id')->on('Classes');
+            $table->unsignedBigInteger('teachers_id');
+            $table->foreign('teachers_id')->references('id')->on('Teachers');
             $table->timestamps();
         });
     }

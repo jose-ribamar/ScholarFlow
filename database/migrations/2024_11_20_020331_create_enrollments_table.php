@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('enrollments', function (Blueprint $table) {
             $table->id();
+            $table->date('registration_date');
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('Students');
+            $table->unsignedBigInteger('class_id');
+            $table->foreign('class_id')->references('id')->on('Classes');
             $table->timestamps();
         });
     }
