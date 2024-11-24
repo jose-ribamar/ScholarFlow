@@ -16,13 +16,13 @@ return new class extends Migration
             $table->float('grade');
             $table->boolean('approved');
             $table->unsignedBigInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('Students');
+            $table->foreign('student_id')->references('id')->on('students');
             $table->unsignedBigInteger('class_id');
-            $table->foreign('class_id')->references('id')->on('Classes');
+            $table->foreign('class_id')->references('id')->on('school_class');
             $table->unsignedBigInteger('teachers_id');
-            $table->foreign('teachers_id')->references('id')->on('Teachers');
+            $table->foreign('teachers_id')->references('id')->on('teachers');
             $table->unsignedBigInteger('disciplines_id');
-            $table->foreign('disciplines_id')->references('id')->on('Disciplines');
+            $table->foreign('disciplines_id')->references('id')->on('disciplines');
             $table->timestamps();
         });
     }
