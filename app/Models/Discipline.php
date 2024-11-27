@@ -13,7 +13,7 @@ class Discipline extends Model
     'registration_date'
     ];
 
-    public function Allocatio (): HasMany 
+    public function allocatio (): HasMany 
     {
         return $this->hasMany(Allocation::class, 'created_by');
     }

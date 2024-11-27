@@ -13,12 +13,12 @@ class SchoolClass extends Model
         'registration_date',
     ];
 
-    public function Allocatio (): HasMany
+    public function allocatio (): HasMany
     {
         return $this->hasMany(Allocation::class, 'created_by');
     }
 
-    public function Enrollment (): HasMany 
+    public function enrollment (): HasMany 
     {
         return $this->hasMany(Enrollment::class, 'created_by');
     }

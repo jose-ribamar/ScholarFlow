@@ -13,12 +13,12 @@ class Enrollment extends Model
         'class_id',
     ];
 
-    public function Student(): BelongsTo
+    public function student(): BelongsTo
     {
         return $this->belongsTo(Student::class);
     }
 
-    public function SchoolClass(): BelongsTo
+    public function schoolClass(): BelongsTo
     {
         return $this->belongsTo(SchoolClass::class);
     }

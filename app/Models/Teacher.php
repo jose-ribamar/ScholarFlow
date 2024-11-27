@@ -12,12 +12,12 @@ class Teacher extends Model
         "created_by",
     ] ;
 
-    public function User(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'created_by');
     }
 
-    public function Allocatio (): HasMany 
+    public function allocatio (): HasMany 
     {
         return $this->hasMany(Allocation::class, 'created_by');
     }
