@@ -19,9 +19,9 @@ class Allocation extends Model
         return $this->belongsTo(Discipline::class);
     }
 
-    public function schoolClass(): BelongsTo
+    public function classroom(): BelongsTo
     {
-        return $this->belongsTo(SchoolClass::class);
+        return $this->belongsTo(Classroom::class);
     }
 
     public function teacher(): BelongsTo

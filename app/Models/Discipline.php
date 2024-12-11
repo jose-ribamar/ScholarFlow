@@ -15,6 +15,11 @@ class Discipline extends Model
 
     public function allocatio (): HasMany 
     {
-        return $this->hasMany(Allocation::class, 'created_by');
+        return $this->hasMany(Allocation::class);
+    }
+
+    public function reportCard (): HasMany
+    {
+        return $this->hasMany(ReportCard::class);
     }
 }

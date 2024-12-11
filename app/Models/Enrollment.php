@@ -18,8 +18,8 @@ class Enrollment extends Model
         return $this->belongsTo(Student::class);
     }
 
-    public function schoolClass(): BelongsTo
+    public function Classroom(): BelongsTo
     {
-        return $this->belongsTo(SchoolClass::class);
+        return $this->belongsTo(Classroom::class);
     }
 }

@@ -21,4 +21,9 @@ class Teacher extends Model
     {
         return $this->hasMany(Allocation::class, 'created_by');
     }
+
+    public function reportCard (): HasMany
+    {
+        return $this->hasMany(ReportCard::class, 'created_by');
+    }
 }

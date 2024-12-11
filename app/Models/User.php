@@ -59,6 +59,16 @@ class User extends Authenticatable
         return $this->hasMany(Student::class, 'created_by');
     }
     
+    public function address (): HasMany
+    {
+        return $this->hasMany(related: Address::class);
+    }
+    
+    public function allotmentStatus (): HasMany
+    {
+        return $this->hasMany(related: AllotmentStatus::class);
+    }
+    
     public function Teacher (): HasMany 
     {
         return $this->hasMany(Teacher::class, 'created_by');
